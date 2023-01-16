@@ -88,15 +88,15 @@ const handleSubmit = async (e) => {
   clearInterval(loadInterval);
   messageDiv.innerHTML = '';
 
-  if(response.ok) {
-    const data = await response.json()
-    const parsedData = data.bot.trim()
+  if (response.ok) {
+    const data = await response.json();
+    const parsedData = data.bot.trim();
 
-    typeText(messageDiv, parsedData)
+    typeText(messageDiv, parsedData);
   } else {
     const err = await response.text();
 
-    messageDiv.innerHTML = "Something went wrong";
+    messageDiv.innerHTML = 'Something went wrong';
 
     alert(err);
   }
